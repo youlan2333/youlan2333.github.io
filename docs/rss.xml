@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://youlan2333.github.io</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://youlan2333.github.io</link></image><lastBuildDate>Wed, 28 May 2025 12:55:09 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>PID</title><link>https://youlan2333.github.io/post/PID.html</link><description>#### 标准电信号
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://youlan2333.github.io</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://youlan2333.github.io</link></image><lastBuildDate>Wed, 28 May 2025 16:27:00 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>PID</title><link>https://youlan2333.github.io/post/PID.html</link><description>#### 标准电信号
 
 标准电信号对应数字量：
 
@@ -51,7 +51,14 @@ $$
 PID控制可以对某个过程变量进行精确控制。</description><guid isPermaLink="true">https://youlan2333.github.io/post/PID.html</guid><pubDate>Wed, 28 May 2025 12:54:38 +0000</pubDate></item><item><title>交叉引用</title><link>https://youlan2333.github.io/post/jiao-cha-yin-yong.html</link><description>可以初步检查数据重叠
 
 - D：四个相邻
-- W：两个相邻。</description><guid isPermaLink="true">https://youlan2333.github.io/post/jiao-cha-yin-yong.html</guid><pubDate>Wed, 28 May 2025 12:53:37 +0000</pubDate></item><item><title>子程序</title><link>https://youlan2333.github.io/post/zi-cheng-xu.html</link><description>使用子程序时，避免使用条件调用，易出现失能流保持（不刷新），一般配合复位指令
+- W：两个相邻。</description><guid isPermaLink="true">https://youlan2333.github.io/post/jiao-cha-yin-yong.html</guid><pubDate>Wed, 28 May 2025 12:53:37 +0000</pubDate></item><item><title>数据块</title><link>https://youlan2333.github.io/post/shu-ju-kuai.html</link><description>1. 数据块相当于sm0.0+MOV
+2. 数据块用于初始化
+3. 掉电保持优先级高于数据块。</description><guid isPermaLink="true">https://youlan2333.github.io/post/shu-ju-kuai.html</guid><pubDate>Wed, 28 May 2025 12:53:14 +0000</pubDate></item><item><title>中断</title><link>https://youlan2333.github.io/post/zhong-duan.html</link><description>1. 中断捕捉上升沿，而扫描周期捕捉高低电平
+2. 同一时刻，只能执行一个中断程序
+3. 中断执行时，不允许二次中断
+4. 中断执行时，遵循先来后到的原则
+5. 中断队列深度有限，超出后会丢失
+6. 一个中断事件连接多个中断程序，最后执行的中断连接指令`（ATCH）`生效（错误用法）。</description><guid isPermaLink="true">https://youlan2333.github.io/post/zhong-duan.html</guid><pubDate>Wed, 28 May 2025 12:53:00 +0000</pubDate></item><item><title>子程序</title><link>https://youlan2333.github.io/post/zi-cheng-xu.html</link><description>使用子程序时，避免使用条件调用，易出现失能流保持（不刷新），一般配合复位指令
 优化设计是条件放入子程序内
 优点是节约扫描周期
 
@@ -72,7 +79,32 @@ PID控制可以对某个过程变量进行精确控制。</description><guid isP
 
 1. 局部变量区大小为64字节，后4位系统占用
 2. 输入输出针脚最多16个
-3. in，out，in_out变量创建时会引出针脚，temp内部使用，不会引出针脚。</description><guid isPermaLink="true">https://youlan2333.github.io/post/zi-cheng-xu.html</guid><pubDate>Wed, 28 May 2025 12:52:43 +0000</pubDate></item><item><title>程序控制</title><link>https://youlan2333.github.io/post/cheng-xu-kong-zhi.html</link><description>#### `FOR`
+3. in，out，in_out变量创建时会引出针脚，temp内部使用，不会引出针脚。</description><guid isPermaLink="true">https://youlan2333.github.io/post/zi-cheng-xu.html</guid><pubDate>Wed, 28 May 2025 12:52:43 +0000</pubDate></item><item><title>间接寻址</title><link>https://youlan2333.github.io/post/jian-jie-xun-zhi.html</link><description>#### 建立指针
+
+指针必须通过 `&amp;` 符号创建，并存储至 32 位寄存器中（如 `VD`、`LD`、`AC1` 等）
+存储器地址的地址（实际内存地址）存放入存储区V区（全局变量存储区），L区（局部变量存储区），累加器（`AC0`除外）
+
+#### 偏移指针
+
+- 存储器是字节时，指针加1
+- 存储器是字时，指针加2
+- 存储器是双字时，指针加4
+
+#### `&amp;` 符号
+
+取地址，`&amp;` 符号用于获取某个存储单元的 **地址**
+
+例：&amp;VB100 表示变量存储区（V 区）中字节地址为 `VB100` 的 **地址值**（即指针），它本身是一个 32 位的数值（双字 DWORD），存储在寄存器（如 VD100）中
+
+#### `*` 符号
+
+解引用，`*` 符号用于 **间接寻址**，表示通过指针访问存储区中实际存储的 **数据**，数据类型由指令决定，指令的 **操作数类型** 决定访问的数据长度
+
+要点：
+
+1. AC0不能存储指针
+2. 位不支持间接寻址
+3. `&amp;`：获取存储单元的地址（指针），用于间接寻址的起点。</description><guid isPermaLink="true">https://youlan2333.github.io/post/jian-jie-xun-zhi.html</guid><pubDate>Wed, 28 May 2025 12:52:18 +0000</pubDate></item><item><title>程序控制</title><link>https://youlan2333.github.io/post/cheng-xu-kong-zhi.html</link><description>#### `FOR`
 
 循环，循环计数值`INDX`，循环开始值`INIT`，循环结束值`FINAL`
 
@@ -120,7 +152,33 @@ PID控制可以对某个过程变量进行精确控制。</description><guid isP
 要点：
 
 1. 与运算`WAND`,可以使某些位置0，其余位不变
-2. 或运算`WOR`,可以使某些位置1，其余位不变。</description><guid isPermaLink="true">https://youlan2333.github.io/post/luo-ji-yun-suan.html</guid><pubDate>Wed, 28 May 2025 12:51:21 +0000</pubDate></item><item><title>时钟</title><link>https://youlan2333.github.io/post/shi-zhong.html</link><description>#### BCD码
+2. 或运算`WOR`,可以使某些位置1，其余位不变。</description><guid isPermaLink="true">https://youlan2333.github.io/post/luo-ji-yun-suan.html</guid><pubDate>Wed, 28 May 2025 12:51:21 +0000</pubDate></item><item><title>移位</title><link>https://youlan2333.github.io/post/yi-wei.html</link><description>`SHL_B`，`SHR_B`：左右字节移位，缺位补零
+
+`ROL_B`，`ROR_B`：左右循环字节移位，左高位移右低位
+
+SM1.1：”溢出“标志位，保存最后一次被移出的位的值
+
+要点：
+
+1. 输入输出为同一数据时，注意加沿
+2. 移位个数等于数据长度的一半，交换数据高低位，类似`SWAP`
+3. 移位个数超过数据长度，数据置零，效果类同复位（R）
+4. 移位个数超过数据长度，则模除取余
+5. 左移一位相当于乘2，右移一位相当于除2
+
+#### `SHRB`
+
+移位寄存器，移入位值DATA（0/1），S_BIT移位寄存器最低有效位位置，N 移位寄存器的长度方向
+
+功能：
+
+在存储区的任意位置，可以开辟一个最大不超过64个位的存储区域（由N指定的移位寄存器的最大长度，最大不超过64位），将DATA的位值移入这个存储区域，且可以实现左移或者是右移操作
+
+```
+#移位寄存器的最高有效位地址
+MSB.b = [(S_BIT 字节) + ([N] - 1 + (S_BIT 位))/8].[除以 8  后的余数]
+```
+。</description><guid isPermaLink="true">https://youlan2333.github.io/post/yi-wei.html</guid><pubDate>Wed, 28 May 2025 12:51:03 +0000</pubDate></item><item><title>时钟</title><link>https://youlan2333.github.io/post/shi-zhong.html</link><description>#### BCD码
 
 **4位二进制数表示1位十进制数**
 
@@ -142,7 +200,14 @@ PID控制可以对某个过程变量进行精确控制。</description><guid isP
 | 5      | 秒     | 00 至 59（BCD 值）                 |
 | 6      | 保留   | 始终为 00                          |
 | 7      | 星期几 | 使用 SET_RTC/TODW 指令写入时会忽略 |
-。</description><guid isPermaLink="true">https://youlan2333.github.io/post/shi-zhong.html</guid><pubDate>Wed, 28 May 2025 12:50:32 +0000</pubDate></item><item><title>转换</title><link>https://youlan2333.github.io/post/zhuan-huan.html</link><description>- `B_I`：8位字节转16位整数
+。</description><guid isPermaLink="true">https://youlan2333.github.io/post/shi-zhong.html</guid><pubDate>Wed, 28 May 2025 12:50:32 +0000</pubDate></item><item><title>累加器</title><link>https://youlan2333.github.io/post/lei-jia-qi.html</link><description>AC0，AC1，AC，AC3
+
+1. **先赋值后使用**（错误使用不会报错）
+2. 输入输出为同一数据时，注意加沿
+3. 长度随指令变化
+4. 不能被赋值
+5. 不能被监控
+6. 能重复使用。</description><guid isPermaLink="true">https://youlan2333.github.io/post/lei-jia-qi.html</guid><pubDate>Wed, 28 May 2025 12:48:21 +0000</pubDate></item><item><title>转换</title><link>https://youlan2333.github.io/post/zhuan-huan.html</link><description>- `B_I`：8位字节转16位整数
 - `I_B`：16位整数转8位字节
 - `I_DI`：16位整数转32位双整数
 - `DI_I`：32位双整数转16位整数
@@ -154,7 +219,20 @@ PID控制可以对某个过程变量进行精确控制。</description><guid isP
 
 1. 转换需逐级转换
 2. 高级数据类型转低级数据类型会把高位字节置零
-3. 高级数据类型转低级数据类型不能超出数据范围。</description><guid isPermaLink="true">https://youlan2333.github.io/post/zhuan-huan.html</guid><pubDate>Wed, 28 May 2025 12:48:06 +0000</pubDate></item><item><title>比较</title><link>https://youlan2333.github.io/post/bi-jiao.html</link><description>满足条件，则接通。</description><guid isPermaLink="true">https://youlan2333.github.io/post/bi-jiao.html</guid><pubDate>Wed, 28 May 2025 12:47:14 +0000</pubDate></item><item><title>定时器</title><link>https://youlan2333.github.io/post/ding-shi-qi.html</link><description>接通延时定时器：线圈通电，当前值0到32767自增，到达设定值时，触点动作
+3. 高级数据类型转低级数据类型不能超出数据范围。</description><guid isPermaLink="true">https://youlan2333.github.io/post/zhuan-huan.html</guid><pubDate>Wed, 28 May 2025 12:48:06 +0000</pubDate></item><item><title>传送</title><link>https://youlan2333.github.io/post/chuan-song.html</link><description>`BLKMOV_B`：字节块传送，起始地址IN，长度N（8位1~255，16位1~65535），传送地址OUT
+
+`SWAP`：字节交换，起始地址IN，交换高低字节
+
+`MOV_BIR`，`MOV_BIW`：字节立即读写，不更新过程映像输入寄存器，直接读物理输入，写物理输出，更新过程映像输出。</description><guid isPermaLink="true">https://youlan2333.github.io/post/chuan-song.html</guid><pubDate>Wed, 28 May 2025 12:47:35 +0000</pubDate></item><item><title>比较</title><link>https://youlan2333.github.io/post/bi-jiao.html</link><description>满足条件，则接通。</description><guid isPermaLink="true">https://youlan2333.github.io/post/bi-jiao.html</guid><pubDate>Wed, 28 May 2025 12:47:14 +0000</pubDate></item><item><title>计数器</title><link>https://youlan2333.github.io/post/ji-shu-qi.html</link><description>C0~C255
+
+`CTU`：加计数，当前值PV，CU接通时，当前值加一，到达当前值时，触点接通，直到32767，停止计数
+
+`CTD`：减计数，当前值PV，LD接通一次，LD装载PV输入为当前值，CU接通时，当前值减一，到达0时，触点接通，停止计数
+
+`CTUD`：加/减计数，CU接通时，当前值加一，CD接通时，当前值减一,&gt;=当前值时，触点接通，
+
+1. 输入输出为同一数据时，无需加沿**（自带上升沿）**
+2. `CTUD`达到最大值 32767 时，加计数输入处的下一上升沿导致当前计数值变为最小值 -32768。</description><guid isPermaLink="true">https://youlan2333.github.io/post/ji-shu-qi.html</guid><pubDate>Wed, 28 May 2025 12:46:35 +0000</pubDate></item><item><title>定时器</title><link>https://youlan2333.github.io/post/ding-shi-qi.html</link><description>接通延时定时器：线圈通电，当前值0到32767自增，到达设定值时，触点动作
 
 断开延时定时器：线圈通电，当前值设定值到0自减，到达0时，触点动作
 
