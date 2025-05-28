@@ -1,5 +1,26 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://youlan2333.github.io</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://youlan2333.github.io</link></image><lastBuildDate>Wed, 28 May 2025 12:52:36 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>程序控制</title><link>https://youlan2333.github.io/post/cheng-xu-kong-zhi.html</link><description>#### `FOR`
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://youlan2333.github.io</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://youlan2333.github.io</link></image><lastBuildDate>Wed, 28 May 2025 12:53:23 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>子程序</title><link>https://youlan2333.github.io/post/zi-cheng-xu.html</link><description>使用子程序时，避免使用条件调用，易出现失能流保持（不刷新），一般配合复位指令
+优化设计是条件放入子程序内
+优点是节约扫描周期
+
+1. 带参子程序不能使用沿指令，定时器，计数器
+2. 造沿：上闭下圈
+
+#### 局部变量
+
+用法：
+
+- 先赋值后使用，在输入针脚上的变量不用遵循（in，in_out）
+- in变量：在左侧，只读不写
+- out变量：在右侧，只写不读，保持写入
+- in_out变量：左右皆可，可读可写
+- TEMP：临时变量，（先赋值后使用）
+
+要点：
+
+1. 局部变量区大小为64字节，后4位系统占用
+2. 输入输出针脚最多16个
+3. in，out，in_out变量创建时会引出针脚，temp内部使用，不会引出针脚。</description><guid isPermaLink="true">https://youlan2333.github.io/post/zi-cheng-xu.html</guid><pubDate>Wed, 28 May 2025 12:52:43 +0000</pubDate></item><item><title>程序控制</title><link>https://youlan2333.github.io/post/cheng-xu-kong-zhi.html</link><description>#### `FOR`
 
 循环，循环计数值`INDX`，循环开始值`INIT`，循环结束值`FINAL`
 
