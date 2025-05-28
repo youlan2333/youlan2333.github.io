@@ -1,5 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://youlan2333.github.io</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://youlan2333.github.io</link></image><lastBuildDate>Wed, 28 May 2025 12:43:56 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>扫描周期</title><link>https://youlan2333.github.io/post/sao-miao-zhou-qi.html</link><description>PLC工作原理即一次扫描周期
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://youlan2333.github.io</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://youlan2333.github.io</link></image><lastBuildDate>Wed, 28 May 2025 12:45:58 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>位逻辑</title><link>https://youlan2333.github.io/post/wei-luo-ji.html</link><description>#### 即时指令
+
+只能用于输入输出（I区Q区），扫描经过时立即执行，不须等待扫描周期结束，以解除扫描周期限制
+
+#### 上升沿、下降沿
+
+存0来1得1赋1、存1来0得1赋0
+
+sm0.0没有沿
+
+sm0.1只有下降沿
+
+#### 取反
+
+取反能流输入的状态。</description><guid isPermaLink="true">https://youlan2333.github.io/post/wei-luo-ji.html</guid><pubDate>Wed, 28 May 2025 12:45:30 +0000</pubDate></item><item><title>扫描周期</title><link>https://youlan2333.github.io/post/sao-miao-zhou-qi.html</link><description>PLC工作原理即一次扫描周期
 
 1. 采集：单次扫描周期单次采集
 2. 运算：支路计算，执行主路
