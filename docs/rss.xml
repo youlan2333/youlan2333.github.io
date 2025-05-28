@@ -1,2 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://youlan2333.github.io</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://youlan2333.github.io</link></image><lastBuildDate>Mon, 07 Apr 2025 14:43:04 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>Hello，Word！</title><link>https://youlan2333.github.io/post/Hello%EF%BC%8CWord%EF%BC%81.html</link><description>Hello，Word！。</description><guid isPermaLink="true">https://youlan2333.github.io/post/Hello%EF%BC%8CWord%EF%BC%81.html</guid><pubDate>Mon, 07 Apr 2025 14:42:39 +0000</pubDate></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://youlan2333.github.io</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://youlan2333.github.io</link></image><lastBuildDate>Wed, 28 May 2025 12:43:56 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>扫描周期</title><link>https://youlan2333.github.io/post/sao-miao-zhou-qi.html</link><description>PLC工作原理即一次扫描周期
+
+1. 采集：单次扫描周期单次采集
+2. 运算：支路计算，执行主路
+3. 集合
+4. 输出
+
+由于一次扫描周期，只能顺序扫描，所以程序是基于**先线圈，后触点**设计（线圈在触点之上）
+
+输出指令是唯一不需要能流，只需要扫描周期扫描经过时执行的指令
+
+（置位复位指令及其他既需要能流，又需要扫描周期）
+。</description><guid isPermaLink="true">https://youlan2333.github.io/post/sao-miao-zhou-qi.html</guid><pubDate>Wed, 28 May 2025 12:43:20 +0000</pubDate></item><item><title>Hello，Word！</title><link>https://youlan2333.github.io/post/Hello%EF%BC%8CWord%EF%BC%81.html</link><description>Hello，Word！。</description><guid isPermaLink="true">https://youlan2333.github.io/post/Hello%EF%BC%8CWord%EF%BC%81.html</guid><pubDate>Mon, 07 Apr 2025 14:42:39 +0000</pubDate></item></channel></rss>
