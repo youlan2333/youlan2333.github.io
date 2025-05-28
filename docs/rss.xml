@@ -1,5 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://youlan2333.github.io</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://youlan2333.github.io</link></image><lastBuildDate>Wed, 28 May 2025 12:51:07 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>时钟</title><link>https://youlan2333.github.io/post/shi-zhong.html</link><description>#### BCD码
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://youlan2333.github.io</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://youlan2333.github.io</link></image><lastBuildDate>Wed, 28 May 2025 12:51:50 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>逻辑运算</title><link>https://youlan2333.github.io/post/luo-ji-yun-suan.html</link><description>`INV_B`：字节取反，1得0，0得1
+
+`WAND_B`：字节与运算，全1得1，有0得0
+
+`WOR_B`：字节或运算，全0得0，有1得1
+
+`WXOR`：字节异或，相同得0，相异得1
+
+要点：
+
+1. 与运算`WAND`,可以使某些位置0，其余位不变
+2. 或运算`WOR`,可以使某些位置1，其余位不变。</description><guid isPermaLink="true">https://youlan2333.github.io/post/luo-ji-yun-suan.html</guid><pubDate>Wed, 28 May 2025 12:51:21 +0000</pubDate></item><item><title>时钟</title><link>https://youlan2333.github.io/post/shi-zhong.html</link><description>#### BCD码
 
 **4位二进制数表示1位十进制数**
 
